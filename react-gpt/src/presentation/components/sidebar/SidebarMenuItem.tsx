@@ -17,7 +17,7 @@ export const SidebarMenuItem: React.FC<SidebarMenuItemProps> = ({ option }) => {
       className={({ isActive }) =>
         isActive
           ? "flex justify-center items-center bg-gray-800 rounded-md p-2 transition-colors"
-          : "flex justify-center items-center bg-gray-800 rounded-md p-2 transition-colors"
+          : "flex justify-center items-center hover:bg-gray-800 rounded-md p-2 transition-colors"
       }
     >
       <i className={`${option.icon} text-2xl mr-4 text-indigo-400`}></i>
