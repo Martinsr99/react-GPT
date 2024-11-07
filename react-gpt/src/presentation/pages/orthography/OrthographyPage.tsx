@@ -1,5 +1,5 @@
 import React from 'react'
-import { GptMessage, MyMessage } from '../../components'
+import { GptMessage, MyMessage, TypingLoader } from '../../components'
 
 export const OrthographyPage = () => {
   return (
@@ -8,6 +8,7 @@ export const OrthographyPage = () => {
         <div className='grid grid-cols-12 gap-y-2'>
           <GptMessage text="Introduce tu texto para empezar a ayudarte" />
           <MyMessage text="Hola Mundo"/>
+          <TypingLoader className='fade-in'/>
 
         </div>
       </div>
