@@ -1,6 +1,6 @@
 import type { ProsConsResponse } from "../../interfaces"
 
-export async function* prosConsStreamGeneratorUseCase(prompt : strin, abortSignal: AbortSignal) {
+export async function* prosConsStreamGeneratorUseCase(prompt : string, abortSignal: AbortSignal) {
     try {
 
         const resp = await fetch(`${import.meta.env.VITE_GPT_API}/pros-cons-discusser-stream`,{
