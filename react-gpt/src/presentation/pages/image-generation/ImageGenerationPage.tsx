@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { GptMessage, MyMessage, TypingLoader, TextMessageBox } from '../../components';
+import { GptMessage, MyMessage, TypingLoader, TextMessageBox, GptMessageImage } from '../../components';
 import { imageGenerationUseCase } from '../../../core/use-cases';
 
 interface Message {
@@ -27,7 +27,7 @@ export const ImageGenerationPage = () => {
     //TODO: add isGpt to true
     if(!imageInfo) return setMessages((prev) => [...prev, {text:'No se pudo generar la imagen',isGpt:true}])
 
-    
+    setMessages((prev) => [...prev, {text,isGpt:true,info:{imageUrl:imageInfo.url, alt:imageInfo.alt}}])
 
 
   }
@@ -39,7 +39,7 @@ export const ImageGenerationPage = () => {
           <GptMessage text="¿Qué imagen quieres generar?" />
           {
             messages.map((message ,index) => (
-              message.isGpt ? (<GptMessage key={index} text='Esto es de OpenAI' />) : <MyMessage key={index} text={message.text} />
+              message.isGpt ? (<GptMessageImage key={index} imageUrl={message.info?.imageUrl!} alt={message.info?.alt!} />) : <MyMessage key={index} text={message.text} />
             ))
           }
           {
