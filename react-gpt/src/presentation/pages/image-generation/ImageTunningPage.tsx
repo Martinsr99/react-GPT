@@ -74,7 +74,7 @@ export const ImageTunningPage = () => {
         <div className="fixed flex-col items-center top-10 right-10 z-10 fade-in">
           <span>Editando</span>
           <img
-            src={originalImageAndMask.original}
+            src={originalImageAndMask.mask ?? originalImageAndMask.original}
             alt="Imagen original"
             className="border rounded-xl w-36 h-36 object-contain"
           />
